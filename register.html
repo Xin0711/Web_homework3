@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>register</title>
+	<link href="stylesNew.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+ 	<script type="text/javascript">
+
+ 		//var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  
+ 		function validateData(){
+ 			var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+ 			
+			if(document.getElementById("taskdesc").value == '')
+				document.getElementById("task-msg").innerHTML = 'Please enter a valid username';
+
+			if (document.getElementById("email").value == '' || !re.test(document.getElementById("email").value))
+				alert("Please enter a valid email address.");
+			else{
+				document.getElementById("task-msg").innerHTML = '';
+				document.myform.submit();
+			}
+		}
+ 	</script>
+
+ 	<fieldset name="userinfo">
+ 	<legend><b>User Information</b></legend>
+ 	<form name="myform">
+ 		
+ 		Username:
+ 		<input type="text" name="name" id ='taskdesc' placeholder="Have a unique name">
+ 		<font color="red"><i><span id="task-msg"></span></i></font></br>
+ 			
+ 		Email Address:
+ 		<input type="text" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" id="email"></br>
+
+        Password: 
+        <input type="password" name="pwd"  /></br>
+ 		
+ 	
+ 		<input type="radio" name="place" value="On Grounds"> On Grounds
+ 		<input type="radio" name="place" value="North Grounds"> North Grounds
+ 		<input type="radio" name="place" value="The Corner"> The Corner
+ 		</br>
+ 		<input type="button" value="Submit!" onclick="validateData()" />
+ 	</form>
+ 	</fieldset>
+
+ 	<script>
+    	function back2lastpage(){
+          window.history.back();
+        }
+    </script>
+
+ 	<div class="back">
+    	<p><u onclick="back2lastpage()">Back to last page</u></p>
+ 	</div>
+</body>
+</html>

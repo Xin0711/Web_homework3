@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Post new ietm</title>
+    <link href="stylesNew.css" type="text/css" rel="stylesheet"/>
+  </head>
+
+  <body>
+
+  	<div>
+  		<h2> Describie your commodity and create a post!</h2><br>
+
+  		<form name='myform'>
+        <table>
+
+  			  <tr>
+          <td>
+          <label>Price:<input type="text" id = "taskdesc" name="desc" />
+          <font color="red"><i><span id="task-msg" ></span></font></i>
+          </label>
+          </td>
+          </tr>
+        
+          <tr>
+          <td>
+          <label>Type:
+  			  <select>
+           		<option value="Furnitures">Furnitures</option>
+          		<option value="Books">Books</option>
+          		<option value="Clothes">Clothes</option>
+          		<option value="Free Section">Free Section</option>	
+  			  </select>
+          </label>
+          </td>
+          </tr>
+
+        <tr>
+        <td>
+  			<label>Insert pictures:
+        <input type="text" name="pictures" />
+        </label>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+  			<label>Locations: 
+  			<select>
+  				<option value="The Corner">The Corner</option>
+          		<option value="On Grounds">On Grounds</option>
+          		<option value="North Grounds">North Grounds</option>
+  			</select> 
+        </label>
+        </td>
+        </tr>
+
+  			<tr>
+        <td><input type="button" onclick="validateData()" value="Submit"></td>
+        </tr>
+        </table>
+  		</form>
+
+
+      <div class="back">
+      <p><u onclick="back2lastpage()" >Back to last page</u></p>
+      </div>
+
+  	</div>
+
+    <script type="text/javascript">
+    function validateData(){
+     
+      if(document.getElementById("taskdesc").value == '')
+        document.getElementById("task-msg").innerHTML = "Please enter a valid price";
+       
+      else{
+        document.getElementById("task-msg").innerHTML = '';
+        document.myform.submit();
+      }
+        
+    }
+    function back2lastpage(){
+          window.history.back();
+    }
+
+  </script>
+  </body>
